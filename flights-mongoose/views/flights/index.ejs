@@ -16,18 +16,24 @@
     </a>
     <table>
        <thead>
-            <th>
+            <tr>
                 <td>Airline</td>
+                <td>Airport</td>
                 <td>Flight Number</td>
                 <td>Departs</td>
-            </th>
+                <td>Flight Details</td>
+            </tr>
         </thead>
         <tbody>
             <% flights.forEach(f => { %>
                 <tr>
                     <td><%= f.airline %></td>
+                    <td><%= f.airport %></td>
                     <td><%= f.flightNo %></td>
                     <td><%= moment(f.departs).format('dddd, MMMM, Do YYYY') %></td>
+                    <td>
+                        <a href="/flights/<%= f._id %>">Details</a>
+                    </td>
                 </tr>
            <% }) %>
         </tbody>
