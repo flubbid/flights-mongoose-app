@@ -1,4 +1,6 @@
-var Flight = require('../models/flight');
+const Flight = require('../models/flight');
+const moment = require('moment');
+
 module.exports = {
     index,
     new: newFlight,
@@ -7,7 +9,7 @@ module.exports = {
 
 function index(req, res){
     Flight.find({}, function(err, flights){
-        res.render('flights/index', {flights});
+        res.render('flights/index', {flights, moment});
     }).sort('departs');
  //Query the database to gather all resources
  //.. because this is an index view

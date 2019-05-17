@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Here's All the Flight</title>
 </head>
 <body>
     <h1>Here's All The Flights</h1>
@@ -26,7 +27,7 @@
                 <tr>
                     <td><%= f.airline %></td>
                     <td><%= f.flightNo %></td>
-                    <td><%= f.departs %></td>
+                    <td><%= moment(f.departs).format('dddd, MMMM, Do YYYY') %></td>
                 </tr>
            <% }) %>
         </tbody>
